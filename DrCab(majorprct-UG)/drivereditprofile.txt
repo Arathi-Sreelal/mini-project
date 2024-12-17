@@ -1,0 +1,95 @@
+  <!-- partial -->
+      <form action="/usereditprofile" method="POST">
+        {% csrf_token %}
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-md-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Profile</h4>
+                  <p class="card-description">
+
+                  </p>
+                  <form class="forms-sample">
+                     <div class="form-group">
+                      <label for="exampleInputEmail1">Email</label>
+                      <input type="email" class="form-control" id="email" name="mail">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">First Name</label>
+                      <input type="text" class="form-control" id="first_name" name="first_name">
+                    </div>
+                     <div class="form-group">
+                      <label for="exampleInputUsername1">Last Name</label>
+                      <input type="text" class="form-control" id="last_name" name="last_name">
+                    </div>
+					 <div class="form-group">
+                      <label for="exampleInputUsername1">Experience</label>
+                      <input type="text" class="form-control" id="exp" name="exp">
+                    </div>
+					<div class="form-group">
+                      <label for="exampleInputUsername1">Currently Working</label>
+                      <input type="text" class="form-control" id="currently_working" name="currently_working">
+                    </div>
+					 <div class="form-group">
+                      <label for="exampleInputUsername1">PAN</label>
+                      <input type="text" class="form-control" id="pan" name="pan">
+                    </div>
+					<div class="form-group">
+                      <label for="exampleInputUsername1">Educational Qualification</label>
+                      <input type="text" class="form-control" id="eduq" name="eduq">
+                    </div>
+                     <div class="form-group">
+                      <label for="exampleInputUsername1">Phone Number</label>
+                      <input type="text" class="form-control" id="phone_number" name="phone_number">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">New Password</label>
+                      <input type="password" class="form-control" id="new_password" name="new_password">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Confirm Password</label>
+                      <input type="password" class="form-control" id="confirm_password" name="confirm_password">
+                    </div>
+                    <div class="form-group">
+                       <button>submit</button>
+                      </div>
+                
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <footer class="footer">
+          <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021.  Premium <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from BootstrapDash. All rights reserved.</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i></span>
+          </div>
+        </footer>
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+  <!-- plugins:js -->
+  <script src="static/homepage/vendors/js/vendor.bundle.base.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page -->
+  <script src="static/homepage/vendors/typeahead.js/typeahead.bundle.min.js"></script>
+  <script src="static/homepage/vendors/select2/select2.min.js"></script>
+  <!-- End plugin js for this page -->
+  <!-- inject:js -->
+  <script src="static/homepage/js/off-canvas.js"></script>
+  <script src="static/homepage/js/hoverable-collapse.js"></script>
+  <script src="static/homepage/js/template.js"></script>
+  <script src="static/homepage/js/settings.js"></script>
+  <script src="static/homepage/js/todolist.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src="static/homepage/js/file-upload.js"></script>
+  <script src="static/homepage/js/typeahead.js"></script>
+  <script src="static/homepage/js/select2.js"></script>
+  <!-- End custom js for this page-->
+</body>
+
+</html>

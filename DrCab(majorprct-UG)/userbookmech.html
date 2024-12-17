@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Table 02</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="static/viewtable/css/style.css">
+
+	</head>
+	<body>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">Table #02</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="table-wrap">
+						<table class="table">
+						  <thead class="thead-dark">
+
+						  </thead>
+						  <tbody>
+						   <tr>
+                        {% for id,first_name,last_name,experience,pan,vehicle_type,edu_qualification,certification,location,currently_working in records %}
+                        <form method="POST" action="/finalbookmech">
+                            {% csrf_token %}
+							<td>ID </td>
+                        <td>{{ id }}</td><input type="hidden" name="id" value="{{ id}}">
+						</tr>
+						   <tr>
+							<td>First Name</td>
+                        <td>{{ first_name }}</td><input type="hidden" name="id" value="{{ id}}">
+						   </tr>
+						<tr>
+							<td>Last Name</td>
+                        <td>{{ last_name }}</td><input type="hidden" name="vehicle_type" value="{{ vehicle_type }}">
+						   </tr>
+						   <tr>>
+							<td>Experience</td>
+                        <td>{{ experience }}</td><input type="hidden" name="vehicle_name" value="{{ vehicle_name }}">
+						   </tr>
+						   <tr>
+							   <td>Pan</td>
+                        <td>{{ pan }}</td><input type="hidden" name="model_number" value="{{ model_number }}">
+						   </tr>
+						   <tr>
+							   <td>Vehicle Type</td>
+                        <td>{{ vehicle_type }}</td>
+						   </tr>
+						   <tr>
+							   <td>Edu Qualification</td>
+                        <td>{{ edu_qualification }}</td>
+							   </tr>
+						   <tr>
+							   <td>Certification</td>
+                        <td>{{ certification }}</td>
+							   </tr>
+						   <tr>
+							   <td>Location</td>
+						<td>{{ location }}</td>
+						   </tr>
+						   <tr>
+							   <td>Currently Working</td>
+						<td>{{ currently_working }}</td>
+							   </tr>
+							     {% endfor %}
+							  
+                        </form>
+						   <tr>
+						<td colspan="2">
+
+							<form method="POST" action="/finalbookmech">
+									 {% csrf_token %}
+								<center><input type="submit" value="Book" class="btn btn-primary"></center>
+							</form>
+							</form>
+				        	</td>
+                    </tr>
+
+						    
+						  </tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="static/viewtable/js/jquery.min.js"></script>
+  <script src="static/viewtable/js/popper.js"></script>
+  <script src="static/viewtable/js/bootstrap.min.js"></script>
+  <script src="static/viewtable/js/main.js"></script>
+
+	</body>
+</html>

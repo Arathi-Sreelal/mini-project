@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Table 02</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="static/viewtable/css/style.css">
+
+	</head>
+	<body>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">Cab Booking</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="table-wrap">
+						{% if messages %}
+						<ul>
+							{% for messages in messages%}
+							<li>{{ messages }}</li>
+							{% endfor %}
+							</ul>
+						{% endif %}
+						</ul>
+						<table class="table">
+						  <thead class="thead-dark">
+						    <tr>
+						      <th>ID</th>
+						      <th>Name</th>
+								<th>Vehicle Number</th>
+						      <th>Date Of Booking</th>
+						      <th>From Location</th>
+							  <th>To Location</th>
+							  <th>Contact Number</th>
+								<th>status</th>
+								<th>Approve/Reject</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						     <tr>
+                        {% for id,name,vehicle_number,dateofbooking,from_location,to_location,contact_number,status in records %}
+                        <form method="POST" action="/adminapprovingcab">
+                            {% csrf_token %}
+                        <td>{{ id }}</td><input type="hidden" name="apid" value=" {{ id }}">
+                        <td>{{ name }}</td>
+						<td>{{ vehicle_number }}</td>
+                        <td>{{ dateofbooking }}</td>
+                        <td>{{ from_location }}</td>
+                        <td>{{ to_location }}</td>
+                        <td>{{ contact_number }}</td>
+
+							<td>
+								<input type="hidden" name="state" value=" {{ status }}">
+                                                {% if status == "Admitted" %}
+                                                <span class="  bg-success">
+                                                {{ status }}
+                                                </span>
+                                                {% elif status == "Denied" %}
+                                                <span class="  bg-danger">
+                                                {{ status }}
+                                                </span>
+                                                {% endif %}
+                                            </td>
+                                            <td>
+                                                <div class="row" style="width: 174px;">
+                                                    <div class="col d-lg-flex justify-content-lg-center" style="width: 30px;">
+                                                        <button name="status" class="btn btn-success shadow-none" type="submit" value="Admit" style="color: var(--bs-white);">Admit</button></div>
+                                                    <div class="col" style="width: 101px;">
+                                                        <button name="status1" class="btn btn-danger shadow-none" type="submit" value="Deny">Deny</button></div>
+                                                </div>
+                                            </td>
+                        </form>
+                    </tr>
+                    {% endfor %}
+						  </tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="static/viewtable/js/jquery.min.js"></script>
+  <script src="static/viewtable/js/popper.js"></script>
+  <script src="static/viewtable/js/bootstrap.min.js"></script>
+  <script src="static/viewtable/js/main.js"></script>
+
+	</body>
+</html>
+

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Table 02</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="static/viewtable/css/style.css">
+
+	</head>
+	<body>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">Table #02</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="table-wrap">
+						
+						
+						<table class="table">
+						  <thead class="thead-dark">
+						    <tr>
+						      <th>ID</th>
+						      <th>First Name</th>
+						      <th>Last Name</th>
+						      <th>Phone Number</th>
+							  <th>Email Id</th>
+							  <th>Experience</th>
+							  <th>Dl Number</th>
+							  <th>Pan</th>
+							  <th>Gender</th>
+
+						    </tr>
+						  </thead>
+						  <tbody>
+						     <tr>
+
+                        <form method="POST" action="/bookdriver1">
+							<input type="hidden" name="name" value=" {{ name }}">
+								 <input type="hidden" name="vnum" value=" {{ vnum }}">
+                            {% csrf_token %}
+							{% for id,first_name,last_name,phone_number,email,experience,dl_number,pan,gender in records %}
+                        <td>{{ id }}</td><input type="hidden" name="cabsid" value=" {{ id }}">
+                        <td>{{ first_name }}</td><input type="hidden" name="fname" value=" {{ first_name }}">
+                        <td>{{ last_name }}</td><input type="hidden" name="lname" value=" {{ last_name }}">
+                        <td>{{ phone_number }}</td>
+						<td>{{ email }}</td>
+						<td>{{ experience }}</td>
+						<td>{{ dl_number }}</td>
+						<td>{{ pan }}</td>
+						<td>{{ gender }}</td>
+
+						
+
+                    </tr>
+                    {% endfor %}
+							 </form>
+						  </tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="static/viewtable/js/jquery.min.js"></script>
+  <script src="static/viewtable/js/popper.js"></script>
+  <script src="static/viewtable/js/bootstrap.min.js"></script>
+  <script src="static/viewtable/js/main.js"></script>
+
+	</body>
+</html>
+

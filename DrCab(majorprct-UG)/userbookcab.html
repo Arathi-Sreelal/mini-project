@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Table 02</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="static/viewtable/css/style.css">
+
+	</head>
+	<body>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">Table #02</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="table-wrap">
+						<table class="table">
+						  <thead class="thead-dark">
+
+						  </thead>
+						  <tbody>
+						   <tr>
+                        {% for id,ownername,vehicle_type,vehicle_name,model_number,engine_number,fuel_type,insurance_number,insurance_upto,pucc_number,pucc_upto,rc_number,mileage in records %}
+                        <form method="POST" action="/finalbookcab">
+                            {% csrf_token %}
+							<td>ID </td>
+                        <td>{{ id }}</td><input type="hidden" name="id" value="{{ id}}">
+						</tr>
+						   <tr>
+							<td>Owner Name</td>
+                        <td>{{ ownername }}</td><input type="hidden" name="id" value="{{ id}}">
+						   </tr>
+						<tr>
+							<td>Vehicle Type</td>
+                        <td>{{ vehicle_type }}</td><input type="hidden" name="vehicle_type" value="{{ vehicle_type }}">
+						   </tr>
+						   <tr>>
+							<td>Vehicle Name</td>
+                        <td>{{ vehicle_name }}</td><input type="hidden" name="vehicle_name" value="{{ vehicle_name }}">
+						   </tr>
+						   <tr>
+							   <td>Registration Number</td>
+                        <td>{{ model_number }}</td><input type="hidden" name="modelnumber" value="{{ model_number }}">
+						   </tr>
+						   <tr>
+							   <td>Engine Number</td>
+                        <td>{{ engine_number }}</td>
+						   </tr>
+						   <tr>
+							   <td>Fuel Type</td>
+                        <td>{{ fuel_type }}</td>
+							   </tr>
+						   <tr>
+							   <td>Insurance Number</td>
+                        <td>{{ insurance_number }}</td>
+							   </tr>
+						   <tr>
+							   <td>Insurance UpTo</td>
+						<td>{{ insurance_upto }}</td>
+						   </tr>
+						   <tr>
+							   <td>PUCC Number</td>
+						<td>{{ pucc_number }}</td>
+							   </tr>
+						   <tr>
+							   <td>PUCC UpTo</td>
+						<td>{{ pucc_upto }}</td>
+							   </tr>
+						   <tr>
+							   <td>RC Number</td>
+						<td>{{ rc_number }}</td>
+							   </tr>
+							   <tr>
+							   <td>Mileage</td>
+						<td>{{ mileage}}</td>
+							   </tr>
+							   <tr>  {% endfor %}
+							   <td>Image1</td>
+						<td><img class="rounded-circle mb-3 mt-4" src="{{ img }}" width="160" height="160"/></td>
+							   </tr>
+							   <tr>
+							   <td>Image2</td>
+						<td><img class="rounded-circle mb-3 mt-4" src="{{ img1  }}" width="160" height="160"/></td>
+							   </tr>
+
+						   <tr>
+						<td colspan="2">
+
+
+								<center><input type="submit" value="Book" class="btn btn-primary"></center>
+
+							</form>
+				        	</td>
+                    </tr>
+
+						    
+						  </tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="static/viewtable/js/jquery.min.js"></script>
+  <script src="static/viewtable/js/popper.js"></script>
+  <script src="static/viewtable/js/bootstrap.min.js"></script>
+  <script src="static/viewtable/js/main.js"></script>
+
+	</body>
+</html>
